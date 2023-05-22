@@ -1,2 +1,3 @@
+async_pymongo==0.1.2
 motor
 pymongo

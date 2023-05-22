@@ -2,6 +2,20 @@
 ## INTRODUCTION 
 Persistent Session Storage for Pyrogram with MongoDB
 
+### async_pymongo (Recommended) 
+```python
+from pyrogram.client import Client
+from pyromongo import MongoStorage
+from async_pymongo import AsyncClient
+
+client = Client(..)
+mongo = AsyncClient("mongodb+srv://..")
+client.storage = MongoStorage(mongo["pyrogram"], remove_peers=False) # use remove_peers=True to remove all peers on logout
+
+
+client.run()
+```
+### Motor 
 ```python
 from pyrogram.client import Client
 from pyromongo import MongoStorage
